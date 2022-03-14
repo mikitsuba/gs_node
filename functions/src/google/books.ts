@@ -5,8 +5,13 @@ import axios from 'axios';
 const app: express.Express = express();
 
 const getBooks = async (keyword: string) => {
-    const baseUrl = 'https://www.googleapis.com/books/v1/volumes?country=JP&q='
-    const result = await axios.get(`${baseUrl}${keyword}`);
+    const baseUrl = 'https://www.googleapis.com/books/v1/volumes'
+    const result = await axios.get(baseUrl, {
+        params: {
+            country: "JP",
+            q: keyword,
+        }
+    });
     return result.data; 
 };
 
