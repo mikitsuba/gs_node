@@ -6,7 +6,7 @@ type User = {
 	name: string
 };
 
-const app:express.Express = express();
+const app = express();
 
 app.get("/:userId", (request, response) => {
   const users: User[] = [

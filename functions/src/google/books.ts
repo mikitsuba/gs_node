@@ -1,10 +1,11 @@
 import * as functions from 'firebase-functions';
 import express from "express";
 import axios from 'axios';
+import { GoogleBookResponse } from '../model/book';
 
-const app: express.Express = express();
+const app = express();
 
-const getBooks = async (keyword: string) => {
+const getBooks = async (keyword: string): Promise<GoogleBookResponse> => {
     const baseUrl = 'https://www.googleapis.com/books/v1/volumes'
     const result = await axios.get(baseUrl, {
         params: {

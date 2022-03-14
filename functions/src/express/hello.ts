@@ -1,7 +1,7 @@
 import * as functions from "firebase-functions";
 import express from "express";
 
-const app:express.Express = express();
+const app = express();
 
 app.get("/", (request, response) => {
 	response.send("Hello, Express!!");
